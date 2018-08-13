@@ -12,28 +12,28 @@ makeAllCaps = arr => {
       words = arr.map(item => {
         newItem = item.toUpperCase()
         return newItem
-      })
-      resolve(words)
+      });
+      resolve(words);
     } else {
       err = 'No, the array you passed in contained an element that was not a string!';
-      reject(err)
+      reject(err);
     }
   })
-  return p
+  return p;
 }
 
 sortWords = (wordArr) => {
   var p = new Promise((resolve, reject) => {
     answer = wordArr.sort()
     resolve(answer)
-  })
-  return p
+  });
+  return p;
 }
 
 makeAllCaps(['wowow', 'pants', 'bird'])
   .then(words => sortWords(words))
   .then(result => console.log(result))
-  .catch(error => console.log(error))
+  .catch(error => console.log(error));
 
 // ['BIRD', 'PANTS', 'WOWOW']
 // And the sad path should be:
@@ -41,6 +41,6 @@ makeAllCaps(['wowow', 'pants', 'bird'])
 makeAllCaps(['wowow', 5, 'bird'])
   .then(words => sortWords(words))
   .then(result => console.log(result))
-  .catch(error => console.log(error))
+  .catch(error => console.log(error));
 
 // 'No, the array you passed in contained an element that was not a string!'
